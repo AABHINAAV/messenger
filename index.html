@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MESSENGER</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body onload='checklogin()'>
+    <header>
+        <div class="logo">messenger</div>
+        <div class="login-box">
+            <div class="id">
+                <span>Email or Phone</span>
+                <input type="text" id="pre-email">
+                <span id='wrong-id'>The email address or phone number that you've entered doesn't match any
+                    account.</span>
+            </div>
+            <div class="pass">
+                <span>Password</span>
+                <input type="password" id="pre-password">
+                <span id='wrong-pass'>Password Invalid</span>
+            </div>
+            <input type="button" value="log-in" onclick="login()">
+        </div>
+    </header>
+    <section>
+        <div class="leftside">
+            <img src="index.png">
+        </div>
+        <div class="rightside">
+            <form>
+                <h1>Create an Account</h1>
+                <h4>It's quick and easy</h4>
+                <div class="name">
+                    <input type="text" id="fname" placeholder="First Name">
+                    <input type="text" id="lname" placeholder="Last Name">
+                </div>
+                <div>
+                    <input type="text" id="email" placeholder="Moblie Number Or Email Address">
+                </div>
+                <div>
+                    <input type="password" id="new-password" placeholder="New Password">
+                </div>
+                <div>
+                    <input type="date" id="dob">
+                </div>
+                <div class="gender">
+                    <span>Gender</span>
+                    <div><input type="radio" name="gender" id="male" checked>Male</div>
+                    <div><input type="radio" name="gender" id="female">Female</div>
+                    <div><input type="radio" name="gender" id="others">Others</div>
+                </div>
+
+                <div class='para'>
+                    By clicking Sign Up, you agree to our Terms, Data Policy and Cookie Policy. You may receive SMS
+                    notifications from us and can opt out at any time.
+                <div>
+
+                <input type="button" value="Sign Up" onclick="signup()" id='signinbtn'>
+            </form>
+        </div>
+    </section>
+
+
+
+    <!-- firebase initialization and authentication -->
+    <section>
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics  -->
+        <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-analytics.js"></script>
+
+        <!-- Add Firebase products that you want to use  -->
+        <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+
+        <!-- database -->
+        <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-database.js"></script>
+        <!-- Your web app's Firebase configuration -->
+        <script>
+            var firebaseConfig = {
+                apiKey: "AIzaSyCKwraLR1xVxk-jZ_xCAkM40EBL9rh8_W8",
+                authDomain: "webchat-5c2e5.firebaseapp.com",
+                databaseURL: "https://webchat-5c2e5.firebaseio.com",
+                projectId: "webchat-5c2e5",
+                storageBucket: "webchat-5c2e5.appspot.com",
+                messagingSenderId: "101471750360",
+                appId: "1:101471750360:web:511c2a47ba0e5c39192fad",
+                measurementId: "G-24PBXL0KXQ"
+            };
+            //   Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+            const database = firebase.database();
+        </script>
+        <!-- main js file -->
+        <script src="index.js"></script>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,307 @@
+/* this file contains css for receriver's profile shower
+that appears on right side by using slider 
+and
+current user's profile shower
+that appears on clicking threeDots>Profile*/
+
+
+
+
+/* reciever's profile shower css */
+.info-box{
+    /* -------------------------------------- */
+    height:0%;
+    /* height:100%; */
+    width:32%;
+    position:fixed;
+    top:0;
+    right:0;
+    background:var(--color5);
+    border:0 var(--color1) solid; 
+    padding:1rem;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-evenly;
+    /* ------------------------------------------ */
+    visibility: hidden;
+    /* visibility: visible; */
+    transition:all 0.5s ease;
+    transition-delay:0.5s;
+}
+.info-box-show{
+    height:100%;
+    border:1px var(--color1) solid;
+    visibility: visible;
+}
+.info-box .image-div{
+    height:10rem;
+    width:10rem;
+    border-radius: 50%;
+    border:1px red solid;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position:relative;
+}
+.user-info{
+    height:40%;
+    width:90%;
+    border:1px grey solid;
+    font-size:1.2rem;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows:repeat(3,3rem);
+    grid-gap: 0.5rem;
+    justify-items: start;
+    align-content: center;
+    padding:1rem;
+    /* ------------------------------------------- */
+    visibility: hidden;
+    /* visibility: visible; */
+    transition:all 0.2s ease;
+    transition-delay:0.5s;
+}
+.userShow{
+    visibility:visible;
+}
+
+
+
+
+/* reciever's profile shower css */
+/* .main{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    height:70%;
+    width:50%;
+    background:rgb(251, 246, 246);
+    box-shadow: 0 0 50px 2px rgba(0,0,0,0.7);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-evenly;
+    visibility:hidden;
+}
+.close-btn{
+    position: absolute;
+    top:0;
+    right:0;
+    width:2.4rem;
+    height:2.4rem;
+    margin:0.5rem;
+}
+.close-btn::after , .close-btn::before{
+    content:'';
+    position: absolute;
+    top:50%;
+    left:50%;
+    height:2rem;
+    width:0.4rem;
+    background:black;
+}
+.close-btn::after{
+    transform:translate(-50%,-50%) rotate(45deg);
+    z-index:-1;
+}
+.close-btn::before{
+    transform:translate(-50%,-50%) rotate(-45deg);
+    z-index:-1;
+}
+.user-image{
+    height: 10rem;
+    width:10rem;
+    border-radius: 50%;
+    border:2px var(--color1) solid;
+    box-shadow: 0 0 5px rgba(0,0,0,0.7);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.main .user-image i{
+    position: absolute;
+    bottom:0;
+    right:0;
+    height:3rem;
+    width:3rem;
+    border-radius:50%;
+    background:teal;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.7),
+                inset 0 0 1px rgba(255,255,255,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .main .user-image i:active{
+     background:green;
+ }
+ .main .user-image i camera{
+     height:1.4rem;
+     width:2rem;
+     background:white;
+     border-radius:0.2rem;
+     position: relative;
+ }
+ .main .user-image i camera::after{
+    content:'';
+    position: absolute;
+    height:0.8rem;
+    width:0.8rem;
+    border-radius:50%;
+    border:2px solid teal;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+ }
+ .main .user-image i camera::before{
+    content:'';
+    position: absolute;
+    top:-10%;
+    left:50%;
+    transform:translate(-50%,0%);
+    background:white;
+    border-radius:0.1rem 0.1rem 0 0;
+    height:0.5rem;
+    width:1rem; 
+ }
+ .main .profile{
+    height:40%;
+    width:60%;
+    border:1px grey solid;
+    font-size:1.2rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.7),
+                inset 0 0 1px rgba(255,255,255,0.4);
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows:repeat(3,3rem);
+    grid-gap: 0.5rem;
+    justify-items: start;
+    align-content: flex-end;
+    padding:0 1rem;
+ }
+ .main .profile div{
+     font-weight: 600;
+     font-size: 1.3rem;
+     text-decoration:underline var(--color1) wavy;
+ } */
+
+
+
+
+
+
+ .main{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    height:70%;
+    width:50%;
+    background:rgb(251, 246, 246);
+    box-shadow: 0 0 50px 2px rgba(0,0,0,0.7);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-evenly;
+    visibility:hidden;
+}
+.close-btn{
+    position: absolute;
+    top:0;
+    right:0;
+    width:2.4rem;
+    height:2.4rem;
+    margin:0.5rem;
+}
+.close-btn::after , .close-btn::before{
+    content:'';
+    position: absolute;
+    top:50%;
+    left:50%;
+    height:2rem;
+    width:0.4rem;
+    background:black;
+}
+.close-btn::after{
+    transform:translate(-50%,-50%) rotate(45deg);
+    z-index:-1;
+}
+.close-btn::before{
+    transform:translate(-50%,-50%) rotate(-45deg);
+    z-index:-1;
+}
+.user-image{
+    height: 10rem;
+    width:10rem;
+    border-radius: 50%;
+    border:2px var(--color1) solid;
+    box-shadow: 0 0 5px rgba(0,0,0,0.7);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.changeProfileImage{
+    position: absolute;
+    bottom:0;
+    right:0;
+    border:none;
+    outline:none;
+    height:3rem;
+    width:3rem;
+}
+.main .user-image #image::-webkit-file-upload-button{
+    visibility: hidden;
+}
+.main .user-image #image{
+    position: absolute;
+    border:none;
+    outline:none;
+    height:3rem;
+    width:3rem;
+    border-radius:50%;
+    background:teal;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.7),
+                inset 0 0 1px rgba(255,255,255,0.4);
+ }
+ .main .user-image #image::after{
+     content:'';
+     position: absolute;
+     top:0;
+     left:0;
+     height:3rem;
+     width:3rem;
+     border-radius: 50%;
+     background:url('images/camera.svg');
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: 70%;
+ }
+ .main .user-image #image:active{
+     background:green;
+ }
+ .main .profile{
+    height:40%;
+    width:60%;
+    border:1px grey solid;
+    font-size:1.2rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.7),
+                inset 0 0 1px rgba(255,255,255,0.4);
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows:repeat(3,3rem);
+    grid-gap: 0.5rem;
+    justify-items: start;
+    align-content: flex-end;
+    padding:0 1rem;
+ }
+ .main .profile div{
+     font-weight: 600;
+     font-size: 1.3rem;
+     text-decoration:underline var(--color1) wavy;
+ }

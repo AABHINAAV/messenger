@@ -1,0 +1,186 @@
+:root{
+    --color1:#0b3b72;
+    --color2:#1167b1;
+    --color3:#187bcd;
+    --color4:#2a9df4;
+    --color5:#e5f5fd;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    height:100vh;
+    background:linear-gradient(250deg,var(--color1),var(--color4));
+    clip-path: polygon(5vw 0.7vh,
+                        95vw 0.7vh,
+                        99.5vw 5vh,
+                        99.5vw 95vh,
+                        95vw 99.3vh,
+                        5vw 99.3vh,
+                        0.5vw 95vh,
+                        0.5vw 5vh);
+}
+header{
+    width:100%;
+    height:15vh;
+    display: flex;
+    align-items: center;
+    background:var(--color2);
+}
+.logo{
+    width:50%;
+    text-align: center;
+    font-size:2.5rem;
+    font-weight: bold;
+    color:white;
+}
+.login-box{
+    width:50%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color:white;    
+}
+.id , .pass{
+    display: flex;
+    flex-direction:column;
+    font-size:1.2rem;
+    width:30%;
+}
+.id span:nth-child(1) , .pass span:nth-child(1){
+    margin-left:0.5rem;
+}
+#wrong-id , #wrong-pass{
+    position: absolute;
+    top:4.5rem;
+    color:white;
+    background: red;
+    font-size: 1rem;
+    margin-top:0.1rem;
+    z-index: 10;
+    visibility: hidden;
+}
+#wrong-id{
+    height:6rem;
+    width:10rem;
+    padding:0.2rem;
+    border-radius: 4px;
+}
+#wrong-pass{
+    height:1.5rem;
+    width:10rem;
+    padding:0.2rem;
+    border-radius: 4px;
+}
+.login-box input[type="text"] ,
+.login-box input[type="password"] ,
+.login-box input[type="button"] {
+    outline:none;
+    border:none;
+    border-radius: 5px;
+}
+.login-box input[type="text"] ,
+.login-box input[type="password"]{
+    outline:none;
+    border:none;
+    padding:0.1rem 0.2rem;
+    font-size:1.1rem;
+    border:2px solid rgba(0,0,0,0.7);
+}
+.login-box input[type="button"]{
+    background-color: var(--color4);
+    font-size:1.1rem;
+    padding:0.2rem;
+    outline: none;
+    border:1px solid black;
+    color:white;
+}
+.login-box input[type="button"]:hover{
+    background-color: var(--color3);
+}
+.login-box input[type="button"]:active{
+    background-color: var(--color1);
+}
+section{
+    position: absolute;
+    height:85vh;
+    display:flex;
+    background-color: var(--color5);
+}
+.leftside{
+    overflow:hidden;
+}
+.leftside img{
+    width:100%;
+    height:auto;
+}
+.rightside{
+    color:rgb(26, 23, 23);
+    text-align: center;
+}
+.rightside h1{
+    font-size:2.5rem;
+    margin:1rem 0 1rem 0;
+}
+.rightside h4{
+    font-size:1.5rem;
+    margin:1rem 0 1rem 0;
+}
+.rightside input[type="text"] ,
+.rightside input[type="password"] , 
+.rightside input[type="date"]{
+    width:80%;
+    height:2.2rem;
+    margin:0.4rem 0;
+    font-size:1.2rem;
+    outline:none;
+    padding:0 0.5rem;
+}
+.rightside .name{
+    display:flex;
+    justify-content: center;
+}
+#fname , #lname{
+    width:38%;
+    margin:0.4rem 0.7rem;
+}
+.gender{
+    margin:0.4rem 0 1rem 0;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    font-size:1.2rem;
+    font-weight: bold;
+}
+.gender span{
+    color:grey;
+    font-size:1.4rem;
+    margin: 0 4rem 0 0;
+}
+.gender div{
+    margin:0 1rem;
+}
+.gender input[type="radio"]{
+    margin:0 0.3rem;
+}
+.rightside .para{
+    width: 60%;
+    color:grey;
+    margin:auto;
+}
+.rightside input[type="button"]{
+    margin-top:1rem;
+    font-size:1.5rem;
+    background:rgb(109, 172, 16);
+    outline:1px solid greenyellow;
+    border-radius:4px;
+    padding:0.5rem 2rem;
+    font-weight:bold;
+    letter-spacing: 1px;
+    color:white;
+}

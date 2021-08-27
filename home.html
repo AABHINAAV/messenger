@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+    <link rel="icon" href="images/index.png" type='image/png'>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="home-UX.css">
+</head>
+
+<body>
+    <div class="left">
+        <div class="left-head">
+            <div class="app-name">MESSENGER</div>
+            <div class="search-box">
+                <input type="text" id="search-user" placeholder="enter the user name">
+                <div id="search-btn" onclick="searchUser()"></div>
+            </div>
+        </div>
+        <div class="contact">
+            <!-- <input type="button" value="grp" class='group-chat-btn'> -->
+        </div>
+    </div>
+    <div class="right">
+        <div class="contact-name">
+            <div class="checker">
+                <input type="checkbox" id="show" onclick='infoBar()'>
+                <div class="tasks">
+                    <span>HIDE</span>
+                    <span>SHOW</span>
+                </div>
+            </div>
+            <div class="chat-name"></div>
+            <div class="menu">
+                <div class="three-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <input type="checkbox" id="options">
+                <ul class="list">
+                    <li><a onclick="logout()">Log Out</a></li>
+                    <li><a onclick='showProfile()'>Profile</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="chat-area">
+            <div class="msgs-area"></div>
+            <div class="msg-box">
+                <textarea id="msg-field" placeholder="enter your message"></textarea>
+                <input type="button" value="send" id="send-btn" onclick="sendMessage()">
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- using to show the details of receiver -->
+    <!-- appears using show slider with the help of js -->
+    <div class="info-box">
+        <div class="image-div"></div>
+        <div class="user-info">
+            <div>NAME : </div>
+            <span class="reciever-name"></span>
+            <div>USER NAME : </div>
+            <span class="reciever-uname"></span>
+            <div>DOB : </div>
+            <span class="reciever-dob"></span>
+        </div>
+    </div>
+
+
+
+    <!-- using to show user's profile details -->
+    <!-- appears on click threeDots>Profile -->
+    <div class="main">
+        <div class="close-btn" onclick="closeProfile()"></div>
+        <div class="user-image">
+            <div class="changeProfileImage">
+                <!-- <input type="file" id="image"> -->
+            </div>
+        </div>
+        <div class="profile">
+            <div>NAME : </div>
+            <span class="users-name"></span>
+            <div>USER NAME : </div>
+            <span class="users-uname"></span>
+            <div>DOB : </div>
+            <span class="users-dob"></span>
+        </div>
+
+    </div>
+
+
+    <!-- <input type="button" value="update" onclick="update()"> -->
+
+    <!-- firebase initialization and authentication -->
+    <section>
+
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics  -->
+        <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-analytics.js"></script>
+
+        <!-- Add Firebase products that you want to use  -->
+        <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+
+        <!-- database -->
+        <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-database.js"></script>
+        <!-- Your web app's Firebase configuration -->
+        <script>
+            var firebaseConfig = {
+                apiKey: "AIzaSyCKwraLR1xVxk-jZ_xCAkM40EBL9rh8_W8",
+                authDomain: "webchat-5c2e5.firebaseapp.com",
+                databaseURL: "https://webchat-5c2e5.firebaseio.com",
+                projectId: "webchat-5c2e5",
+                storageBucket: "webchat-5c2e5.appspot.com",
+                messagingSenderId: "101471750360",
+                appId: "1:101471750360:web:511c2a47ba0e5c39192fad",
+                measurementId: "G-24PBXL0KXQ"
+            };
+            //   Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+            const database = firebase.database();
+        </script>
+
+        <!-- authetication state checking -->
+        <script>
+            firebase.auth().onAuthStateChanged(function (user) {
+                if (user) {
+                    // calling function to give unique username to user at line no 14 in home.js
+                    checkUnameCreated();
+                    setUserInfo();
+                    showFriends();
+                } else {
+                    location.href = 'index.html';
+                }
+            });
+        </script>
+
+        <script src="home-UX.js"></script>
+        <script src="home.js"></script>
+
+    </section>
+
+</body>
+
+</html>
