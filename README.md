@@ -1,6 +1,6 @@
 # messenger
-Project Status : Working and adding new features
-Project Name : Messenger
+* Project Status : Working and adding new features
+* Project Name : Messenger
 
 Languages Used:
   Front-End : HTML, CSS, JS
