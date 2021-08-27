@@ -2,11 +2,11 @@
 * Project Status : Working and adding new features
 * Project Name : Messenger
 
-Languages Used:
-  Front-End : HTML, CSS, JS
-  Back-End : JS
-  Database : Google Firebase
-  Storage Ares : Google Firebase Bucket
+* Languages Used:
+  * Front-End : HTML, CSS, JS
+  * Back-End : JS
+  * Database : Google Firebase
+  *  Storage Area : Google Firebase Bucket
 
 Description:
   It is a website where different users can join and chat with their connection.
